@@ -1,0 +1,52 @@
+###############################AOA
+# house_053024 (model house_021224)
+###############################
+## vscode
+.vscode/
+
+## solidity & npm support
+bin/
+node_modules/
+package-lock.json
+
+## misc OSx
+*~
+.#.*
+\#.gitignore#
+*.DS_Store
+\#.env#
+\#__init__.py#
+__pycache__
+~$*
+
+## xcode workspace
+*.xcworkspace
+
+## hide site security
+#sites/
+
+## hide emebedded repos #
+house_tools/
+
+## hide logs #
+logs/
+
+## hide posts ##
+posts/
+
+## hide wallets ##
+_wallets/
+## hide environmentals
+.env*
+pkg-*/
+
+## hide legacy helpers
+_legacy/
+_inv/
+_expenses/
+
+## ignore folders ##
+#_*/
+
+#######################################
+#######################################

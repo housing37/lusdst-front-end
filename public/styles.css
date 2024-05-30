@@ -1,0 +1,476 @@
+/* Reset and Basic Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #000000; /* Matrix-style black background */
+  color: #00ff00; /* Matrix-style green text */
+  line-height: 1.6;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start; /* Align content to the top */
+}
+
+@keyframes matrixFlow {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+a {
+  color: #00ff00; /* Matrix-style green links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #00ffff; /* Light blue on hover for links */
+}
+
+/* Navigation Styles */
+nav {
+  background-color: #000000; /* Matrix-style black navigation background */
+  color: #00ff00; /* Matrix-style green navigation text */
+  display: flex;
+  justify-content: center; /* Center the navbar horizontally */
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  border-radius: 20px; /* Rounded corners */
+  background-color: transparent; /* Transparent background */
+  border: 1px solid #00ff00; /* Green border */
+  color: #00ff00; /* Matrix-style green text */
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.nav-links a:hover {
+  background-color: #00ff00; /* Green background on hover */
+  color: #000000; /* Black text on hover */
+}
+
+.logo a {
+  color: #00ff00; /* Matrix-style green logo text */
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.banner {
+  width: 100%;
+  max-width: 1000px; /* Adjust maximum width as needed */
+  margin-top: 2rem; /* Adjust margin as needed */
+  border-radius: 8px; /* Adjust border radius as needed */
+  overflow: hidden; /* Hide overflow content */
+  position: relative; /* Position relative for animation */
+}
+
+.banner img {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Cover the entire container */
+  opacity: 0; /* Initially set opacity to 0 */
+  animation: fadeIn 1s ease forwards; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start with opacity 0 */
+  }
+  to {
+    opacity: 1; /* End with opacity 1 */
+  }
+}
+
+/* Main Content Styles */
+main {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  width: 100%; /* Ensure main occupies full width of its container */
+  padding-top: 80px; /* Add top padding to account for fixed nav */
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.content-card {
+  background-color: #101010; /* Dark gray content card background */
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 255, 0, 0.5); /* Green shadow */
+  padding: 2rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  width: 100%; /* Ensure full width within container */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex; /* Ensures flex layout for contents */
+  flex-direction: column; /* Aligns child elements (e.g., headings, paragraphs) vertically */
+}
+
+/* Ensure there's no conflicting CSS by adding more specific selectors */
+body main .content-card {
+  flex-direction: column !important;
+}
+
+.content-card h2 {
+  color: #00ff00; /* Matrix-style green headings */
+  margin-bottom: 1rem;
+}
+
+.content-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #ffffff; /* White text */
+}
+
+/* Hover effect for content cards */
+.content-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 255, 0, 0.6); /* Lighter green shadow */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #000000; /* Matrix-style black footer background */
+  color: #00ff00; /* Matrix-style green footer text */
+  text-align: center;
+  padding: 2rem;
+  margin-top: auto;
+  width: 100%;
+}
+
+/* Additional styles to ensure proper alignment and spacing */
+.content-card p {
+  margin-bottom: 1rem; /* Space between paragraphs */
+}
+
+/* Loading Overlay Styles */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    45deg,
+    #0f0122,
+    #000
+  ); /* Pulsing gradient background */
+  animation: pulse 2s infinite alternate; /* Apply pulsing animation */
+}
+
+.loading-spinner img {
+  width: 75px; /* Adjust the width of the loading spinner image */
+  height: auto;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #1b0040; /* Initial color */
+  }
+  100% {
+    background-color: #000; /* Final color */
+  }
+}
+
+.nav-links,
+.social-icons {
+  align-items: center;
+}
+
+/* Style for hidden class */
+.hidden {
+  display: none;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 480px) {
+  .hero a.cta {
+    padding: 0.5rem 1rem; /* Reduce padding for call to action button */
+  }
+}
+
+.nav-links a:hover {
+  color: #00ffff; /* Light blue on hover for navigation links */
+}
+
+.logo a:hover {
+  color: #00ffff; /* Light blue on hover for logo text */
+}
+
+/* Hover effect for footer */
+footer:hover {
+  background-color: #303234; /* Darker gray on hover for footer */
+  transition: background-color 0.3s ease;
+}
+
+.tabs {
+  overflow: hidden;
+  background: #333;
+  font-family: "Poppins", sans-serif;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.tablinks {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: background-color 0.3s;
+  font-size: 17px;
+  color: #00ff00;
+}
+
+/* Change background color of tabs on hover */
+.tablinks:hover {
+  background-color: #007700;
+  color: #ffffff;
+}
+
+/* Create an active/current tablink class */
+.tablinks.active {
+  background-color: #009900;
+  color: #ffffff;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border-top: none;
+}
+
+/* Style for when a tabcontent is displayed */
+.tabcontent.active {
+  display: block;
+}
+
+/* Style the submit button */
+#connect-wallet-1,
+#connect-wallet,
+#request-payout-button,
+#payout-handle,
+#submit-handle,
+#view-button,
+#how-to {
+  background-color: #00ff00;
+  color: #000000;
+  padding: 10px 20px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+/* Enhanced Modal styles for a Matrix theme */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0); /* Pure black background */
+}
+
+.modal-content {
+  color: #33ff33; /* Matrix green for text */
+  background-color: #000; /* Black background for the modal content */
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #33ff33; /* Matrix green border */
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Use viewport height to ensure it's not too big or small */
+  max-width: 90%; /* Responsive width */
+}
+
+.video-container {
+  position: relative;
+  width: 100%; /* Ensures video container is responsive */
+  max-width: 640px; /* Maximum size of video to avoid it being too large */
+}
+
+.video-container video {
+  width: 100%; /* Responsive width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px;
+}
+
+.close {
+  color: #33ff33; /* Matrix green */
+  position: absolute;
+  top: -10px; /* Adjust if needed to ensure visibility */
+  right: -10px;
+  font-size: 35px;
+  font-weight: bold;
+  background-color: #000; /* Black background for the button */
+  border: 1px solid #33ff33; /* Matrix green border */
+  border-radius: 50%; /* Circle shape */
+  padding: 0 10px; /* Padding to make the close button bigger */
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+}
+
+/* Change background color of submit button on hover */
+#connect-wallet-1:hover,
+#connect-wallet:hover,
+#request-payout-button:hover,
+#payout-handle:hover,
+#submit-handle:hover,
+#view-button:hover,
+#how-to:hover {
+  background-color: #00cc00;
+}
+
+/* Style for input fields */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block; /* Ensure input fields are displayed as blocks */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #00ff00;
+}
+
+/* Styles for the error message */
+.error-message {
+  color: #ff0000;
+  margin-top: 0.5rem;
+}
+
+/* Styles for the user details box */
+.user-details-box {
+  margin-top: 20px;
+  border: 1px solid #00ff00;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #222;
+}
+
+/* Style for the cashout button */
+#tradein-button {
+  background-color: #00ff00;
+  color: #000000;
+  padding: 10px 20px;
+  margin: 10px auto;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Change background color of cashout button on hover */
+#tradein-button:hover {
+  background-color: #00cc00;
+}
+
+/* Responsive design adjustments for the view-my-stuff section */
+@media only screen and (max-width: 768px) {
+  .tweet-form,
+  .cashout-form,
+  .view-stuff-form,
+  .user-details-box {
+    width: 90%; /* Adjust the width for smaller screens */
+  }
+
+  .tablinks {
+    padding: 10px;
+    font-size: 15px;
+  }
+
+  .submit-button {
+    font-size: 0.9rem; /* Reduce font size for smaller screens */
+  }
+}
+/* Add CSS styles here */
+
+/* Navigation Styles */
+nav {
+  padding: 1rem 0.5rem; /* Adjust padding for smaller screens */
+}
+
+.nav-links a {
+  padding: 0.3rem 0.5rem; /* Reduce padding for smaller screens */
+  font-size: 0.9rem; /* Reduce font size for smaller screens */
+}
+
+.logo a {
+  font-size: 1.2rem; /* Reduce logo font size for smaller screens */
+}
+
+/* Main Content Styles */
+.content-card {
+  padding: 1.5rem; /* Adjust padding for smaller screens */
+}
+
+.content-card h2 {
+  font-size: 1.2rem; /* Reduce heading font size for smaller screens */
+}
+
+.content-card p {
+  font-size: 0.9rem; /* Reduce paragraph font size for smaller screens */
+}
+
+/* Modal */
+.modal-content {
+  margin: 5% 5%; /* Adjust margin for smaller screens */
+  padding: 1rem; /* Adjust padding for smaller screens */
+}
+
+.close {
+  font-size: 25px; /* Adjust close button size for smaller screens */
+}
+
+/* Footer Styles */
+footer {
+  padding: 2rem 1rem; /* Adjust padding for smaller screens */
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="viewMyStuff.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <title>Trinity</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+      padding: 20px;
+    }
+
+    .content-card {
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #000000;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    ol {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav .nav-links {
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+    }
+
+    nav .nav-links a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    @media (min-width: 600px) {
+      main {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-links">
+      "Burn-to-Earn"
+    </div>
+  </nav>
+
+  <main>
+    <section id="About" class="content-card">
+      <div class="about-info">
+        <h3>(1) Intro Description ...</h3>
+        <ol>
+          <li>this is a support token for pLUSD that allows you to earn LUSDst while burning pLUSD, etc.</li>
+        </ol>
+        <br>
+        <h3>(2) Deposit Instructions ... </h3>
+        <ol>
+          <li>Send PLS (not $WPLS) to this contract address and the contract will swap it for USD stable and maintain a balance for you displayed in this dapp.
+            Then you can use that balance in this dapp to easily buy & burn pLUSD, while minting yourself LUSDst</li>
+        </ol>
+        <br>
+        <h3>(3) Burn Instructions ...</h3>
+        <p> - connect wallet and view your USD balance<br>
+            - enter amount of USD you would like to spend to buy & burn $pLUSD<br>
+            - enter the address of where you would like your reward $LUSDst minted to<br>
+            - click the 'burn & mint' button</p>
+        <br>
+        <h3>Tokenomics</h3>
+        <p> - For every 1 pLUSD that someone decides to burn, they will be rewarded/minted with 1 share token (our new $LUSDst)<br>
+            - this supports the scarcity of pLUSD, helping pLUSD rise to $1<br>
+            - this creates the psychological ‘impression’ of receiving equal value for the value they burn (ie. 1:1) … hopefully encouraging people to participate, as opposed to just burning on their own and receiving nothing immediately ‘tangent’ in return … thus relieving some stress in the sense of waiting to sell pLUSD (since they actually have something else that they replaced it with) 🤔<br>          
+            - this creates scarcity for the share token (LUSDST) as well… since people will be minting less and less share token as people burn less and less pLUSD (since the price of pLUSD will be rising towards $1)
+          </p>
+        <br>
+      </div>
+    </section>    
+    <section id="payout-shiller" class="content-card">
+      <div>
+        <h2>Burn To Earn&nbsp;&nbsp;&nbsp;<button id="connect-wallet-1">(Connect Wallet)</button></h2>
+      </div>
+      <h3>(4) LUSDst Info ...</h3>
+      <p> - tLUSDst_0.4 ca: "0x014D7caE54F7fDd22eBac48C049F64271b84c8b4"<br>
+          - LUSDst total supply<br>
+          - pLUSD total burned<br>
+          - LUSDst market price (dexscreener iframe)<br>
+          - pLUSD market price (dexscreener iframe)<br>
+          - pLUSD contract address<br>
+          - pLUSD total supply<br>
+      </p>
+      <h3>(5) Account Info ...</h3>
+      <label for="usd-amount-bal">Wallet Currently Connected: <span id="wallet-addr"></span></label><br>
+      <label for="usd-amount-bal">Current USD Balance: $<span id="usd-balance"></span></label>
+      <br>
+      <p> - total pLUSD you have bought & burned<br>
+          - total LUSDst you have minted<br>
+      </p>
+      <h3>(6) Buy & Burn $pLUSD / Earn $LUSDst ...</h3>
+      <div class="payout-form">
+        <label for="usd-amount">How much USD would you like to spend to BUY & BURN $pLUSD? (required)</label>
+        <input type="text" id="payout-usd-amount" name="payout-usd-amount" placeholder="Enter USD amount (ex: 37.00)" /><br/>
+        <label for="to-address">Where would you like your earned $LUSDst sent? (required)</label>
+        <input type="text" id="payout-to-address" name="payout-to-address" placeholder="Enter wallet address (ex: 0x123456789)" /><br/>
+        <button id="payout-handle">Burn & Earn</button>
+      </div>
+    </section>
+  </main>
+  <!-- <footer>&copy; 2024 Trinity. All rights reserved.</footer> -->
+  <script src="lusdst_test.js" defer></script>
+</body>
+</html>
