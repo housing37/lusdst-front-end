@@ -13,8 +13,9 @@ jQuery(window).load(function() {
 
 // Contract address
 // # tLUSDst_0.4: 0x014D7caE54F7fDd22eBac48C049F64271b84c8b4
+// # tLUSDst_1.1: 0x9e68d69bddf821a0ecb4f993c6430c3ecbae69fb
 // # LUSDst: ...
-const contractAddress = '0x014D7caE54F7fDd22eBac48C049F64271b84c8b4';
+const contractAddress = '0x9e68d69bddf821a0ecb4f993c6430c3ecbae69fb';
 const GAS_LIMIT = 938000; // # gas used: 838,000+
 const MAX_PRIOR_FEE = 500000000000;
 
